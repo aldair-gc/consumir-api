@@ -14,3 +14,7 @@ export const Nav = styled.nav`
     font-weight: bold;
   }
 `;
+
+export const Separator = styled.div`
+  width: 100%;
+`;
