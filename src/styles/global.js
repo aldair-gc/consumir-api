@@ -12,7 +12,6 @@ export default createGlobalStyle`
   body {
     font-family: sans-serif;
     background: ${primaryDarkColor};
-    color: ${primaryColor};
   }
 
   html, body, #root {
@@ -40,7 +39,7 @@ export default createGlobalStyle`
 `;
 
 export const Container = styled.section`
-  max-width: 500px;
+  max-width: 900px;
   background: #fff;
   margin: 30px auto;
   padding: 30px;
