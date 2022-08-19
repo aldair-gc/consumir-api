@@ -20,12 +20,17 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
-    background-color: ${primaryColor};
+    background: ${primaryColor};
     border: none;
     color: #fff;
     padding: 10px 20px;
     border-radius: 8px;
     font-weight: 700;
+    transition: all 300ms;
+
+    &:hover {
+      filter: brightness(75%);
+    }
   }
 
   link, a {
