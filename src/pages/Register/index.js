@@ -6,6 +6,7 @@ import { get } from 'lodash';
 import { Container } from '../../styles/global';
 import { Form } from './styled';
 import axios from '../../services/axios';
+import history from '../../services/history';
 
 export default function Register() {
   const [nome, setNome] = useState('');
@@ -35,7 +36,7 @@ export default function Register() {
 
     try {
       await axios.post('/user/', { nome, password, email });
-      document.location = '/';
+      history.push('/login');
       toast.success('Cadastro realizado');
     } catch (err) {
       const errors = get(err, 'response.data.errors', []);

@@ -1,7 +1,8 @@
-import { BrowserRouter } from 'react-router-dom';
+import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import history from './services/history';
 
 // import history from './services/history';
 import store, { persistor } from './store';
@@ -13,12 +14,12 @@ export default function App() {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <BrowserRouter>
+        <HistoryRouter history={history}>
           <Header />
           <Routes />
           <ToastContainer autoClose={3000} />
           <GlobalStyle />
-        </BrowserRouter>
+        </HistoryRouter>
       </PersistGate>
     </Provider>
   );
