@@ -7,13 +7,16 @@ import { Container } from '../../styles/global';
 import { Form } from './styled';
 import axios from '../../services/axios';
 import history from '../../services/history';
+import Loading from '../../components/Loading';
 
 export default function Register() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   async function handleSubmit(e) {
+    setIsLoading(true);
     e.preventDefault();
     let formErrors = false;
 
@@ -41,11 +44,14 @@ export default function Register() {
     } catch (err) {
       const errors = get(err, 'response.data.errors', []);
       errors.map((error) => toast.error(error));
+    } finally {
+      setIsLoading(false);
     }
   }
 
   return (
     <Container>
+      <Loading isLoading={isLoading} />
       <h1>Novo usuário</h1>
 
       {/* eslint-disable-next-line react/jsx-no-bind */}
