@@ -8,12 +8,9 @@ import Loading from '../../components/Loading';
 import { Container } from '../../styles/global';
 import { Form } from './styled';
 import * as actions from '../../store/modules/auth/actions';
-// import axios from '../../services/axios';
-// import history from '../../services/history';
 
 export default function Login(props) {
   const dispatch = useDispatch();
-
   const prevPath = get(props, 'location.state.prevPath', '/');
 
   const isLoading = useSelector((state) => state.auth.isLoading);

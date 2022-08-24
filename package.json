@@ -2,6 +2,7 @@
   "name": "react-base",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://react1.aldairgc.com",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.4",
     "@testing-library/jest-dom": "^5.16.5",

@@ -12,14 +12,14 @@ import Page404 from '../pages/Page404';
 export default function Routers() {
   return (
     <Routes>
-      <Route exact path="/" element={<Alunos />} />
-      <Route exact path="/register" element={<Register />} />
-      <Route exact path="/login" element={<Login />} />
-      <Route exact path="*" element={<Page404 />} />
-      <Route exat path="/" element={<PrivateRoute />}>
-        <Route exact path="/Aluno/" element={<Aluno />} />
-        <Route exact path="/Aluno/:id/edit" element={<Aluno />} />
-        <Route exact path="/Fotos/:id" element={<Photos />} />
+      <Route path="/" element={<Alunos />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="*" element={<Page404 />} />
+      <Route path="/" element={<PrivateRoute />}>
+        <Route path="/Aluno" element={<Aluno />} />
+        <Route path="/Aluno/:id/edit" element={<Aluno />} />
+        <Route path="/Photos/:id" element={<Photos />} />
       </Route>
     </Routes>
   );

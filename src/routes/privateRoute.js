@@ -1,12 +1,10 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { useLocation, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import Login from '../pages/Login';
 
 export default function PrivateRoute() {
+  const { pathname } = useLocation();
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
-  if (!isLoggedIn) {
-    <Navigate to="/login" state="prevPath: rest.location.pathname" />;
-  }
-
-  return <Outlet />;
+  return isLoggedIn ? <Outlet /> : <Login state={{ prevPath: pathname }} />;
 }
